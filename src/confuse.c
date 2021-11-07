@@ -1881,7 +1881,7 @@ DLLIMPORT char *cfg_tilde_expand(const char *filename)
 {
 	char *expanded = NULL;
 
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(PSP)
 	/* Do tilde expansion */
 	if (filename[0] == '~') {
 		struct passwd *passwd = NULL;
